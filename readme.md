@@ -10,7 +10,6 @@
 - [Développement](#développement)
 - [Contributions](#contributions)
 - [License](#license)
-- [Contact](#contact)
 
 ## Installation
 
