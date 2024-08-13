@@ -1,0 +1,519 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    background-color: #61677A;
+    background-image: url(../Assets/bureau.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    padding: auto;
+}
+
+.hidden {
+    display: none
+}
+
+.active {
+    color: #cfcfcf;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    /* Aligner les éléments de la navbar de chaque côté */
+    align-items: center;
+    padding: 10px 20px;
+    /* Ajouter un peu de padding pour l'espace autour des éléments */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.02);
+    /* Fond semi-transparent pour la navbar */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Fond semi-transparent pour la navbar */
+    z-index: 1000;
+    /* Assurer que la navbar reste au-dessus du contenu */
+    width: 100%;
+    /* Occuper toute la largeur de la fenêtre */
+    white-space: nowrap;
+    /* Empêcher le retour à la ligne des éléments */
+    overflow-x: auto;
+    transition: background-color 0.3s;
+}
+
+/* Styles pour la navbar lorsque quelque chose est en dessous */
+.navbar.guilds-below {
+    background-color: #677bc4;
+    /* Couleur de fond différente */
+}
+
+
+.logo {
+    max-width: 70px;
+    height: auto;
+    /* Ajuster la hauteur proportionnellement à la largeur */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    margin-right: 20px;
+    padding: 10px 10px;
+}
+
+li:last-child {
+    margin-right: 0;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.4s, color 0.4s;
+    border-radius: 10px;
+}
+
+li a:hover {
+    color: #cfcfcf;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 20px;
+    /* Ajuster le padding pour plus d'espace à l'intérieur de la carte */
+    max-width: 400px;
+    /* Limite la largeur de la carte pour qu'elle ne dépasse pas une certaine taille */
+}
+
+article h1 {
+    font-size: 36px;
+    /* Taille de police légèrement plus grande pour le titre */
+    margin-bottom: 10px;
+    /* Ajouter un peu d'espace en bas du titre */
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px 0;
+}
+
+/* Styles pour le paragraphe dans l'article */
+article p {
+    text-align: center;
+    /* Centrer le texte à l'intérieur de la carte */
+    line-height: 1.5;
+    /* Espacement de ligne agréable pour le contenu */
+}
+
+
+.guilds {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Espacement équilibré entre les cartes */
+    margin-top: 150px;
+    /* Marge supérieure pour éviter le chevauchement avec la barre de navigation */
+}
+
+.guild-card {
+    width: 300px;
+    /* Largeur maximale de la carte */
+    height: 300px;
+    /* Hauteur fixe de la carte */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(60px);
+    padding: 20px;
+    color: white;
+    margin: 10px;
+    text-align: left;
+    overflow: hidden;
+    /* Masquer le dépassement de contenu */
+}
+
+.guild-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.guild-logo {
+    width: 50px;
+    /* Taille du logo */
+    height: 50px;
+    border-radius: 50%;
+    /* Rendre le logo arrondi */
+    margin-right: 10px;
+}
+
+.guild-card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.guild-card p {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 12px;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    /* Réduire légèrement le padding pour un aspect plus compact */
+    text-decoration: none;
+    font-size: 18px;
+    /* Légèrement réduire la taille de la police pour un meilleur ajustement */
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.4s, transform 0.4s;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border: none;
+}
+
+.add-button a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #677bc4;
+    transform: translateY(-2px);
+}
+
+.connectbtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border: none;
+}
+
+.connectbtn a {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.connectbtn:hover {
+    background-color: #677bc4;
+    transform: translateY(-2px);
+}
+
+.discordLogo {
+    max-width: 30px;
+    height: auto;
+    /* Ajuster la hauteur proportionnellement à la largeur */
+    border-radius: 50%;
+    margin-right: 5px;
+
+}
+
+.connected {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.connected-Logo {
+    max-width: 40px;
+    height: auto;
+    /* Ajuster la hauteur proportionnellement à la largeur */
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: box-sizing 0.2s, border 0.2s;
+}
+
+.connected-menu {
+    font-family: Arial, Helvetica, sans-serif;
+    display: none;
+    position: fixed;
+    align-items: center;
+    text-align: left;
+    top: calc(20% - 60px);
+    /* Position juste en dessous de la barre de navigation */
+    right: 0;
+    z-index: 1001;
+    padding: 10px 6px;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    width: auto;
+    background-color: #616A6B;
+}
+
+
+.connected-menu h1 {
+    position: absolute;
+    font-size: 22px;
+    margin-bottom: 5px;
+    z-index: 999;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.connected-menu h2 {
+    position: absolute;
+    z-index: 999;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.connected-menu .logout-button {
+    display: block;
+    margin: 0 auto;
+}
+
+.connected-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    align-self: start;
+    /* Permet de centrer les boutons horizontalement et verticalement */
+    transition: background-color 0.4s, transform 0.4s;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.connected-menu a:hover {
+    background-color: #434a4b;
+    transform: translateY(-2px);
+}
+
+.connected-menu-pdp {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Permet de centrer la PDP horizontalement et verticalement */
+    z-index: 999;
+    /* Augmente le z-index pour placer la PDP au-dessus de la bannière */
+}
+
+.connected-menu-banner {
+    border-radius: 10px;
+    width: 320px;
+    /* Largeur de la bannière */
+    height: 120px;
+    /* Hauteur de la bannière */
+    z-index: 1;
+    right: 20px;
+}
+
+.connected-menu-support input[type="text"] {
+    transition: background-color 0.4s, transform 0.4s;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    border: 1px solid #72767d;
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    font-weight: 600;
+}
+
+.connected-menu-support input[type="text"]:focus {
+    background-color: rgb(180, 180, 180);
+    font-weight: normal;
+}
+
+.connected-menu-support input[type="text"]::placeholder {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.input-with-button {
+    position: relative;
+}
+
+.input-with-button input {
+    padding-right: 40px;
+    /* Espace pour l'icône */
+}
+
+#send-button {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    z-index: 1000;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#confirmation-message {
+    color: green;
+    display: none;
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+/* Pour les navigateurs WebKit (Chrome, Safari) */
+/* Styles de la barre de défilement */
+::-webkit-scrollbar {
+    width: 5px; /* Largeur de la barre de défilement */
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Styles du curseur de la barre de défilement */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 1); /* Couleur du curseur */
+    border-radius: 5px; /* Bord arrondi du curseur */
+}
+
+/* Styles de la piste de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Media query pour les appareils de petite taille */
+@media screen and (max-width: 800px) {
+    .mobile-navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 90%;
+        margin-bottom: 10px;
+        height: 40px;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+
+    .mobile-navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    .mobile-navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+    }
+
+    /* Cacher les autres éléments de la navbar */
+    li,
+    .connected-pseudo {
+        display: none;
+    }
+
+    .logo {
+        max-width: 40px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+
+}
+
+@media screen and (max-width: 320px) {
+    .connected-menu {
+        font-family: Arial, Helvetica, sans-serif;
+        display: none;
+        position: fixed;
+        align-items: center;
+        text-align: left;
+        top: calc(23% - 60px);
+        /* Position juste en dessous de la barre de navigation */
+        right: 0;
+        z-index: 1001;
+        padding: 10px 6px;
+        border: 1px solid rgba(0, 0, 0, 0.555);
+        width: auto;
+        background-color: #616A6B;
+    }
+}
+
