@@ -1,5 +1,3 @@
----
-
 # Worlds Radio
 
 **Worlds Radio** est un ajout incroyable pour les serveurs Discord, permettant aux utilisateurs de profiter d'une expérience musicale unique en temps réel. Ce bot Discord facilite l'écoute de radio via des intégrations avec des plateformes de streaming populaires.
@@ -109,7 +107,3 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer, veuillez s
 ## License
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-N'hésitez pas à personnaliser les sections en fonction de vos besoins spécifiques, comme le processus de contribution, les détails de la licence ou les informations de contact.
