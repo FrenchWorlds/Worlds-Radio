@@ -25,7 +25,7 @@ Pour installer et configurer **Worlds Radio**, suivez les étapes ci-dessous :
 1. **Clonez le dépôt :**
 
    ```bash
-   git clone https://github.com/votre-utilisateur/Worlds-Radio.git
+   git clone https://github.com/FrenchWorlds/Worlds-Radio.git
    cd Worlds-Radio
    ```
 
