@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Worlds Radio est un incroyable ajout à tout serveur de Discord qui cherche à offrir une expérience musicale unique à ses membres. Ce bot spécialisé permet aux utilisateurs d'écouter leur musique préférée en temps réel. Grâce à une intégration fluide avec des plateformes de streaming musical populaires, les utilisateurs peuvent profiter d'une grande variété de genres musicaux sans quitter Discord.">
+    <title>Worlds Radio</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/TheRadiosAvatar.gif">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a class="title" href="#">
+            <img class="logo" src="../Assets/TheRadiosAvatar.gif" alt="logo">
+            <h1>Worlds Radio</h1>
+        </a>
+        <nav>
+            <ul class="menu">
+                <li><a href="/home.html">Home</a></li>
+                <li><a class="active" href="#">Dashboard</a></li>
+                <li><a href="https://discord.gg/qAmSnAJExM">Discord</a></li>
+                <li><a href="https://github.com/french08/Worlds-Radio">Github</a></li>
+            </ul>
+        </nav>
+        <button class="connectbtn" onclick="authorize()">
+            <img class="discordLogo" src="../Assets/discordlogo.png" alt="DiscordLogo">
+            Se connecter
+        </button>
+        <div class="connected" style="display: none;">
+            <img class="connected-Logo" id="connected-Logo" src="../Assets/TheRadiosAvatar.gif" alt="discordpdp">
+        </div>
+    </header>
+
+    <article class="connected-menu">
+        <img class="connected-menu-banner" src="banner" alt="banner">
+        <img class="connected-menu-pdp" src="avatar" alt="Photo de profil">
+        <h1 class="global-name">globalname</h1>
+        <h2 class="user-name">username</h2>
+        <div class="separator"></div>
+        <a class="logout-button">Se déconnecter</a>
+        <div class="separator"></div>
+        <div class="connected-menu-support">
+            <div class="input-with-button">
+                <input type="text" id="user-input" placeholder="Laissez nous un message !">
+                <button id="send-button" style="display: none;">
+                    <img width="30" height="30" src="../Assets/sent.png" alt="filled-sent" />
+                </button>
+            </div>
+            <p id="confirmation-message"></p>
+        </div>
+    </article>
+
+
+    <div class="guilds">
+    </div>
+
+    <nav class="mobile-navbar">
+        <a href="/home.html">Acceuil</a>
+        <a href="#">Dashboard</a>
+        <a href="https://discord.gg/Y63pbVDtYh">Discord</a>
+        <a href="https://github.com/french08/Worlds-Radio">Github</a>
+    </nav>
+
+    <script src="./scripts/script.js"></script>
+
+</body>
+
+</html>
